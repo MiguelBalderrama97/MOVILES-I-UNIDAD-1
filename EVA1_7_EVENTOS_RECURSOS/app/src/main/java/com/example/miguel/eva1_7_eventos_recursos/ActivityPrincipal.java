@@ -40,8 +40,8 @@ public class ActivityPrincipal extends AppCompatActivity implements RadioGroup.O
             editTextApe.setHint(R.string.hint_ape_es);
             editTextNom.setHint(R.string.hint_nom_es);
         }else{
-            radioButtonEn.setText(R.string.idioma_en_en);
-            radioButtonEs.setText(R.string.idioma_es_en);
+            radioButtonEn.setText(R.string.idioma_es_en);
+            radioButtonEs.setText(R.string.idioma_en_en);
             textViewApe.setText(R.string.ape_en);
             textViewNom.setText(R.string.nom_en);
             editTextApe.setHint(R.string.hint_ape_en);
