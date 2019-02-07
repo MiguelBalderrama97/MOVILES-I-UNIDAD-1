@@ -14,6 +14,6 @@ public class EventoClick implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(cnt,"Evento generado por clase anónima",Toast.LENGTH_SHORT).show();
+        Toast.makeText(cnt,"Evento generado por clase externa",Toast.LENGTH_SHORT).show();
     }
 }

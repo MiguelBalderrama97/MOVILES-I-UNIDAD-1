@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityPrincipal"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/rgProfes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/radioButtonRuben"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ruben Hernández" />
+
+        <RadioButton
+            android:id="@+id/radioButtonGloria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gloria Gallardo" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMartin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Martin Gonzalez" />
+
+        <RadioButton
+            android:id="@+id/radioButtonLorena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorena Chavira" />
+
+        <RadioButton
+            android:id="@+id/radioButtonAngelica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Angelica García" />
+    </RadioGroup>
+
+</LinearLayout>
