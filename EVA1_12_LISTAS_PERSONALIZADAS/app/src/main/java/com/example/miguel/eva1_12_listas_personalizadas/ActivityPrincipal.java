@@ -2,9 +2,12 @@ package com.example.miguel.eva1_12_listas_personalizadas;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
-public class ActivityPrincipal extends AppCompatActivity {
+public class ActivityPrincipal extends AppCompatActivity implements ListView.OnItemClickListener{
 
     private ListView lstVwCiudades;
     private static Clima[] asClimaCd = {
@@ -24,5 +27,13 @@ public class ActivityPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_principal);
 
         lstVwCiudades = findViewById(R.id.lstVwCiudades);
+        lstVwCiudades.setAdapter(new ClimaAdapter(this, R.layout.layout_clima, asClimaCd));
+
+        lstVwCiudades.setOnItemClickListener(this);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(this, asClimaCd[position].getDesc_clima(), Toast.LENGTH_SHORT).show();
     }
 }

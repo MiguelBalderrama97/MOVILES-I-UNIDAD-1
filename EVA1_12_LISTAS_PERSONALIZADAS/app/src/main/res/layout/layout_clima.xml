@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgClima"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -21,7 +21,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/txtCiudad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ciudad"
@@ -29,19 +29,19 @@
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txtTemp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="10°C" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/txtClima"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Clima" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/txtDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Descripcion Clima"
