@@ -18,7 +18,14 @@
         android:textSize="20dp"
         android:textStyle="bold"/>
 
-        <LinearLayout
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Años entre 1950 y 2019"
+        android:gravity="center"/>
+
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="30dp">
@@ -30,7 +37,7 @@
                 android:text="AÑO DE NACIMIENTO:" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/etxtAnio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -46,29 +53,31 @@
         android:paddingTop="30dp"/>
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rbReg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Regiones desarrolladas" />
+            android:text="Regiones desarrolladas"
+            android:checked="true"/>
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rbAme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="América Latina" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/rbAsia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Asia" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/rbAf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Africa" />
@@ -88,14 +97,15 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radioButton7"
+            android:id="@+id/rbH"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Hombre" />
+            android:text="Hombre"
+            android:checked="true"/>
 
         <RadioButton
-            android:id="@+id/radioButton8"
+            android:id="@+id/rbM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -118,7 +128,7 @@
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/txtExp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -136,11 +146,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="EXPECTATIVA DE VIDA:"
+            android:text="FECHA PROBABLE DECESO:"
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/txtDie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
