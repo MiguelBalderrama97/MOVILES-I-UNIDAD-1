@@ -12,11 +12,11 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
-public class ActivityPrincipal extends AppCompatActivity{
+public class ActivityPrincipal extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener{
 
     private EditText etxtAnio;
     private TextView txtExp, txtDie;
-    private RadioGroup rg;
+    private RadioGroup rg, rg2;
     private RadioButton rbReg, rbAme, rbAsia, rbAf, rbH, rbM;
 
     private int annio, die, life, gen;
@@ -30,12 +30,16 @@ public class ActivityPrincipal extends AppCompatActivity{
         txtDie = findViewById(R.id.txtDie);
         txtExp = findViewById(R.id.txtExp);
         rg = findViewById(R.id.radioGroup);
+        rg2 = findViewById(R.id.rg2);
         rbReg = findViewById(R.id.rbReg);
         rbAsia = findViewById(R.id.rbAsia);
         rbAme = findViewById(R.id.rbAme);
         rbAf = findViewById(R.id.rbAf);
         rbH = findViewById(R.id.rbH);
         rbM = findViewById(R.id.rbM);
+
+        rg.setOnCheckedChangeListener(this);
+        rg2.setOnCheckedChangeListener(this);
 
         etxtAnio.addTextChangedListener(new TextWatcher() {
             @Override
@@ -172,4 +176,123 @@ public class ActivityPrincipal extends AppCompatActivity{
 
     }
 
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        if(etxtAnio.getText().length() > 0){
+            annio = Integer.parseInt(etxtAnio.getText().toString());
+            switch (checkedId){
+                case R.id.rbReg:
+                    if(annio >= 1950 && annio < 1960){
+                        life = 75;
+                        gen = 10;
+                    }else if(annio >= 1960 && annio < 1970){
+                        life = 75;
+                        gen = 9;
+                    }else if(annio >= 1970 && annio < 1980){
+                        life = 80;
+                        gen = 8;
+                    }else if(annio >= 1980 && annio < 1990){
+                        life = 80;
+                        gen = 7;
+                    }else if(annio >= 1990 && annio < 2000){
+                        life = 85;
+                        gen = 6;
+                    }else if(annio >= 2000 && annio <= 2019){
+                        life = 90;
+                        gen = 9;
+                    }else if(annio > 2019 || annio < 1950){
+                        life = 0;
+                        gen = 0;
+                        annio = 0;
+                    }
+                    break;
+                case R.id.rbAme:
+                    if(annio >= 1950 && annio < 1960){
+                        life = 60;
+                        gen = 10;
+                    }else if(annio >= 1960 && annio < 1970){
+                        life = 65;
+                        gen = 9;
+                    }else if(annio >= 1970 && annio < 1980){
+                        life = 70;
+                        gen = 8;
+                    }else if(annio >= 1980 && annio < 1990){
+                        life = 75;
+                        gen = 7;
+                    }else if(annio >= 1990 && annio < 2000){
+                        life = 75;
+                        gen = 6;
+                    }else if(annio >= 2000 && annio <= 2019){
+                        life = 70;
+                        gen = 9;
+                    }else if(annio > 2019 || annio < 1950){
+                        life = 0;
+                        gen = 0;
+                        annio = 0;
+                    }
+                    break;
+                case R.id.rbAsia:
+                    if(annio >= 1950 && annio < 1960){
+                        life = 45;
+                        gen = 10;
+                    }else if(annio >= 1960 && annio < 1970){
+                        life = 50;
+                        gen = 9;
+                    }else if(annio >= 1970 && annio < 1980){
+                        life = 65;
+                        gen = 8;
+                    }else if(annio >= 1980 && annio < 1990){
+                        life = 65;
+                        gen = 7;
+                    }else if(annio >= 1990 && annio < 2000){
+                        life = 60;
+                        gen = 6;
+                    }else if(annio >= 2000 && annio <= 2019){
+                        life = 65;
+                        gen = 9;
+                    }else if(annio > 2019 || annio < 1950){
+                        life = 0;
+                        gen = 0;
+                        annio = 0;
+                    }
+                    break;
+                case R.id.rbAf:
+                    if(annio >= 1950 && annio < 1960){
+                        life = 35;
+                        gen = 10;
+                    }else if(annio >= 1960 && annio < 1970){
+                        life = 45;
+                        gen = 9;
+                    }else if(annio >= 1970 && annio < 1980){
+                        life = 55;
+                        gen = 8;
+                    }else if(annio >= 1980 && annio < 1990){
+                        life = 60;
+                        gen = 7;
+                    }else if(annio >= 1990 && annio < 2000){
+                        life = 55;
+                        gen = 6;
+                    }else if(annio >= 2000 && annio <= 2019){
+                        life = 60;
+                        gen = 9;
+                    }else if(annio > 2019 || annio < 1950){
+                        life = 0;
+                        gen = 0;
+                        annio = 0;
+                    }
+                    break;
+                case R.id.rbH:
+                    gen = gen /2;
+                    life = life - gen;
+                    break;
+                case R.id.rbM:
+                    gen = gen /2;
+                    life = life + gen;
+                    break;
+            }
+            txtExp.setText(life+"");
+            die = life + annio;
+            txtDie.setText(die+"");
+        }
+    }
 }
