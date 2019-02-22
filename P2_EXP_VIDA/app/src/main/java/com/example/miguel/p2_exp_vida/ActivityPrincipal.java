@@ -281,6 +281,9 @@ public class ActivityPrincipal extends AppCompatActivity implements RadioGroup.O
                         annio = 0;
                     }
                     break;
+            }
+
+            switch (checkedId){
                 case R.id.rbH:
                     gen = gen /2;
                     life = life - gen;
