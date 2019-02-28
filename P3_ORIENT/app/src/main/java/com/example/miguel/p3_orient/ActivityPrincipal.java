@@ -57,10 +57,23 @@ public class ActivityPrincipal extends AppCompatActivity {
                 if(nom.isEmpty() || ape.isEmpty() || sexo.isEmpty() || org.isEmpty() || email.isEmpty() || etxtEdad.getText().toString().isEmpty()){
                     Toast.makeText(ActivityPrincipal.this, "Complete los campos", Toast.LENGTH_SHORT).show();
                 }else{
-                    tecnicos.add(new Tecnicos(nom,ape,sexo,org,email,edad));
-                    Toast.makeText(ActivityPrincipal.this, "Tecnico agregado", Toast.LENGTH_SHORT).show();
-                    limpiarCajas();
+                    boolean bVal = false;
+                    for(int i = 0; i < tecnicos.size(); i++){
+                        if(email.equals(tecnicos.get(i).getEmail())) {
+                            bVal = true;
+                        }
+                    }
+
+                    if(bVal){
+                        Toast.makeText(ActivityPrincipal.this, "Usuario ya agregado", Toast.LENGTH_SHORT).show();
+                    }else{
+                        tecnicos.add(new Tecnicos(nom,ape,sexo,org,email,edad));
+                        Toast.makeText(ActivityPrincipal.this, "Tecnico agregado", Toast.LENGTH_SHORT).show();
+                        limpiarCajas();
+                    }
                 }
+
+                Toast.makeText(ActivityPrincipal.this, "Hay " + tecnicos.size() + " registro(s).", Toast.LENGTH_SHORT).show();
             }
         });
     }
