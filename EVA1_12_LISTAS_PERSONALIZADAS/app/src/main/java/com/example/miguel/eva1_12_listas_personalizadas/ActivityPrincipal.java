@@ -1,6 +1,7 @@
 package com.example.miguel.eva1_12_listas_personalizadas;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 public class ActivityPrincipal extends AppCompatActivity implements ListView.OnItemClickListener{
 
     private ListView lstVwCiudades;
+    private Intent inDetalle;
+
     private static Clima[] asClimaCd = {
             new Clima(R.drawable.sunny, "Delicias", "Soleado", "Seco y polvoriento", 17),
             new Clima(R.drawable.sunny, "Entre rios", "Soleado", "Despejado", 24),
@@ -34,10 +37,11 @@ public class ActivityPrincipal extends AppCompatActivity implements ListView.OnI
         lstVwCiudades.setAdapter(new ClimaAdapter(this, R.layout.layout_clima, asClimaCd));
 
         lstVwCiudades.setOnItemClickListener(this);
+        inDetalle = new Intent(this, Detalle.class);
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
         final Dialog dlgMiDialog;
         dlgMiDialog = new Dialog(ActivityPrincipal.this);
         //EL LAYOUT
@@ -63,10 +67,20 @@ public class ActivityPrincipal extends AppCompatActivity implements ListView.OnI
         btnSalir2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dlgMiDialog.dismiss();
+                //dlgMiDialog.dismiss();
+
             }
         });
 
-        dlgMiDialog.show();
+        //dlgMiDialog.show();
+
+        Bundle bDatos = new Bundle();
+        bDatos.putInt("Imagen", asClimaCd[position].getImagen_clima());
+        bDatos.putString("Ciudad", asClimaCd[position].getCiudad());
+        bDatos.putString("Descripcion", asClimaCd[position].getDesc_clima());
+        bDatos.putString("Clima", asClimaCd[position].getClima());
+        bDatos.putDouble("Temperatura", asClimaCd[position].getTemp());
+        inDetalle.putExtras(bDatos);
+        startActivity(inDetalle);
     }
 }
